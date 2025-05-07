@@ -87,11 +87,11 @@ Material:
     - _Contrast: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _Metallic: 0
+    - _Metallic: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
-    - _Smooth: 0
+    - _Smooth: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
