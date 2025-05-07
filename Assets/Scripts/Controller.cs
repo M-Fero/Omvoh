@@ -24,6 +24,19 @@ public class Controller : MonoBehaviour
         return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
     }
 
+    #region Test With Mouse Reference it from Inspector
+    public void ClickableAgent()
+    {
+        
+            Debug.Log("open");
+            DetectCanvas.SetActive(false);
+            hands.SetActive(false);
+            gameCanvas.SetActive(true);
+            OneTime = false;
+        
+    }
+    #endregion
+
     void Update()
     {
 
@@ -100,8 +113,10 @@ public class Controller : MonoBehaviour
         }
 
     }
+    
     public void DetectTe()
     {
+        
         if(detectedText.text == "Open Palm Down")
         {
             Debug.Log("open");
@@ -111,6 +126,7 @@ public class Controller : MonoBehaviour
             OneTime = false;
         }
     }
+    
 }
 // two hands detection 
 
