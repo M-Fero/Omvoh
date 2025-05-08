@@ -22,8 +22,11 @@ public class SolarPanel : MonoBehaviour
     [SerializeField] private int dirtAmountRounded;
 
     [SerializeField] private int dirtAmountCountUp = 0; // New variable to count up
-    [SerializeField] private GameObject endGameCanvas1;
-    [SerializeField] private GameObject endGameCanvas2;
+    [SerializeField] private GameObject endGameCanvas;
+    [SerializeField] private GameObject endGameVideo;
+    [SerializeField] private GameObject currentView1;
+    [SerializeField] private GameObject currentView2;
+    [SerializeField] private MeshRenderer DirtMeshView;
     [SerializeField] private float delayTimeUntilRestart = 10f; // Delay time in seconds before restarting the game
 
     #region Mouse Interaction Related
@@ -103,7 +106,7 @@ public class SolarPanel : MonoBehaviour
 
         //        // Update UI elements position
         //        uiRectTransformV.anchoredPosition = canvasPosition;
-        //        theVImage.transform.position = currentMousePosition; 
+        //        theVImage.transform.position = currentMousePosition;
 
 
         //        int pixelXOffset = pixelX - (dirtBrush.width / 2);
@@ -241,17 +244,21 @@ public class SolarPanel : MonoBehaviour
         {
             dirtAmountCountUp = Mathf.FloorToInt(newProgress / 10f) * 10; // Snap to the nearest 10%
         }
-        if (dirtAmountRounded <= 5)
+        if (dirtAmountRounded <= 3)
         {
             dirtAmountCountUp = 100;
             Debug.Log("Dirt Amount: " + dirtAmountRounded + "%");
-            endGameCanvas1.SetActive(true);
-            endGameCanvas2.SetActive(true);
+            endGameCanvas.SetActive(true);
+            endGameVideo.SetActive(true);
+            currentView1.SetActive(false);
+            currentView2.SetActive(false);
+            DirtMeshView.enabled = false;
 
-            dirtAmountCountUp = 100;
-            Debug.Log("Dirt Amount: " + dirtAmountRounded + "%");
-            endGameCanvas1.SetActive(true);
-            endGameCanvas2.SetActive(true);
+            //dirtAmountCountUp = 100;
+            //Debug.Log("Dirt Amount: " + dirtAmountRounded + "%");
+            //endGameCanvas.SetActive(true);
+            //endGameVideo.SetActive(true);
+            //currentView.SetActive(false);
 
             // Start coroutine to delay the restart
             StartCoroutine(RestartGameAfterDelay());
