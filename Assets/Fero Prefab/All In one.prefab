@@ -514,12 +514,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b578c6e344f78e947b5d4d577770c06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   dirtMaskTextureBase: {fileID: 2800000, guid: 523c661db37b0954ab6d964b35196a8b, type: 3}
   dirtBrush: {fileID: 2800000, guid: 84f72283fa70392409c3908d5b1b8ca7, type: 3}
   material: {fileID: 2100000, guid: 5396d18f3d504fb4cbb09a705fe64870, type: 2}
   dirtBrushWidth: 200
   dirtBrushHeight: 200
-  controller: {fileID: 0}
+  dirtAmountRounded: 0
+  dirtAmountCountUp: 0
+  endGameCanvas: {fileID: 0}
+  endGameVideo: {fileID: 0}
+  currentView1: {fileID: 0}
+  currentView2: {fileID: 0}
+  DirtMeshView: {fileID: 0}
+  delayTimeUntilRestart: 10
   canvas: {fileID: 3129013448873255434}
   theVImage: {fileID: 6837440226821589824}
   uiRectTransformV: {fileID: 8442151845589435632}
